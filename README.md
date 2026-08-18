@@ -81,3 +81,8 @@ This is the database design
                                                     │ content         │
                                                     │ created_at      │
                                                     └─────────────────┘
+
+
+day 2 : 
+complete the database layer
+
