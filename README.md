@@ -84,5 +84,9 @@ This is the database design
 
 
 day 2 : 
-completed the database layer and repository layer
+database layer created
+repository layer created
+service layer created
+
+
 
