@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,5 +26,6 @@ public class Conversations {
     @OneToMany(mappedBy = "conversation")
     private List<Message> messages = new ArrayList<>();
 
+    @CreationTimestamp
     private LocalDateTime createdAt;
 }
