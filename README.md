@@ -82,6 +82,14 @@ This is the database design
                                                     │ created_at      │
                                                     └─────────────────┘
 
+Https status code :
+
+200 success
+409 confict
+403 forbidden
+500 internal server error
+404 error
+
 
 day 2 : 
 database layer created
@@ -89,4 +97,21 @@ repository layer created
 service layer created
 
 
+1.Handling the scenario where the duplicate emails are entered.
+
+2.Securing the password by using Bcrypt.
+    The flow will be like : controller -> service -> Password Encoder -> repository -> MySql
+
+Process : Add spring security dependency, create password encoder bean, add this method to the service class.
+
+3.implementing dto for registration
+    we use dto so that we are not exposing the entire entity to the user through thr api endpooint.
+    
+
+4.Password is hashed before storage.
+Duplicate emails are rejected with 409 Conflict.
+Password is not returned in the API response.
+Database-specific fields aren't exposed through the registration request.
+
+5.implementing the validation for the registration.
 
