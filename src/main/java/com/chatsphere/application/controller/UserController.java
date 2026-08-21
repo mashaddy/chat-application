@@ -5,8 +5,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.chatsphere.application.entity.User;
+import com.chatsphere.application.dto.UserRegistrationRequest;
+import com.chatsphere.application.dto.UserResponse;
 import com.chatsphere.application.service.UserService;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/users")
@@ -18,7 +21,7 @@ public class UserController {
     }
 
     @PostMapping
-    public User createUser(@RequestBody User user) {
-        return userService.saveUser(user);
+    public UserResponse createUser(@Valid @RequestBody UserRegistrationRequest request) {
+        return userService.registerUser(request);
     }
 }
