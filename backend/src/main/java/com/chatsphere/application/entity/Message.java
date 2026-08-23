@@ -16,11 +16,11 @@ import jakarta.persistence.Table;
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "conversation_id", nullable = false)
-    private Conversations conversation;
+    private Conversation conversation;
 
     @ManyToOne
     @JoinColumn(name = "sender_id", nullable = false)

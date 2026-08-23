@@ -84,11 +84,11 @@ This is the database design
 
 Https status code :
 
-200 success
-409 confict
-403 forbidden
-500 internal server error
-404 error
+200 success : the api is successful
+409 confict : the api is not meat with validations
+403 forbidden :  should change the premissions in the spring security
+500 internal server error :
+404 error :
 
 
 day 2 : 
@@ -115,3 +115,8 @@ Database-specific fields aren't exposed through the registration request.
 
 5.implementing the validation for the registration.
 
+6.implementing conversation where two people can talk
+
+7. transaction management : @transactional will treat the whole method as the single database transaction.
+
+8.

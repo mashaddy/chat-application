@@ -15,10 +15,20 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="conversations")
-public class Conversations {
+public class Conversation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+
 
     @OneToMany(mappedBy = "conversation")
     private List<Conversations_Participant> participants = new ArrayList<>();
@@ -28,4 +38,14 @@ public class Conversations {
 
     @CreationTimestamp
     private LocalDateTime createdAt;
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    
 }
